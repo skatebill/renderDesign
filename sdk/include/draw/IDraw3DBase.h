@@ -165,7 +165,7 @@ namespace xc{
 			//! 创建纹理
 			shared_ptr<ITexture> createTextureFromImage(shared_ptr<fileservice::IImage>)=0;
 			//! 创建rtt
-			shared_ptr<ITextureTarget> createTextureTarget(int width,int height,bool depth,bool stencil)=0;
+			shared_ptr<ITextureTarget> createTextureTarget(int width,int height,bool depth=true,bool stencil=true)=0;
 
 		};
 #pragma endregion TEXTURE

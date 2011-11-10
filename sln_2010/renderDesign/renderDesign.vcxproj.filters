@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="源文件">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="头文件">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="资源文件">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="render">
+      <UniqueIdentifier>{7c26e594-31af-450b-97ca-a101b4bd4140}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="draw">
+      <UniqueIdentifier>{a867d749-3ad1-4bf1-8520-cbaef29c2f4e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ruler">
+      <UniqueIdentifier>{37bc8cdb-8df0-4bc3-83d2-6db819f9b795}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="main.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\sdk\ruler\rule.cpp">
+      <Filter>ruler</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\sdk\include\draw\IDraw3DBase.h">
+      <Filter>draw</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\include\draw\IDrawBase.h">
+      <Filter>draw</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\include\draw\IDrawer3D.h">
+      <Filter>draw</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\include\draw\IDrawPath.h">
+      <Filter>draw</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>

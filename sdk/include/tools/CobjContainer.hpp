@@ -7,11 +7,20 @@
 #pragma once
 #include"IobjContainer.hpp"
 namespace xc{
-	template<typename C,typename T,typename CONTAINER=std::list<T>>
+	enum EnumPos{
+		front,
+		back,
+		after,
+		center
+	};
+	class cnull{
+
+	};
+	template<typename T,typename C=cnull,typename CONTAINER=std::list<T>>
 	class CobjContainer:public C{
-	private:
-		CONTAINER m_container;
 	public:
+		typedef typename CONTAINER::iterator cIte;
+		CONTAINER m_container;
 		//×ÜÊý
 		unsigned int getObjNum(){
 			return m_container.size();

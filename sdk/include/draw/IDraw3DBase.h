@@ -1,7 +1,69 @@
 #pragma once
 #include <service/file/IImage.h>
+#include <tools/MyTypes.h>
 namespace xc{
 	namespace draw{
+		//! 图元类型枚举
+		enum EnumPrimityType
+		{
+			EPT_DOTS=0,
+			EPT_LINES,
+			EPT_LINE_STRIP,
+			EPT_TRIANGLES,
+			EPT_TRIANGLE_STRIP
+		};
+
+		//! 比较模式
+		enum enumCompare{
+			NEVER=0,
+			ALWAYS,
+			LESS,
+			GREATER,
+			EQUAL,
+			LEQUAL,
+			GEQUAL,
+			NOTEQUAL
+		};
+		//! 模板操作
+		enum enumStencilOperation{
+			KEEP=0,
+			ZERO,
+			REPLACE,
+			INCR,
+			DECR,
+			INVERT,
+			INCR_WRAP,
+			DECR_WRAP
+		};
+		//! 混合方式
+		enum enumBlendFunc{
+			ZERO,
+			ONE,
+			SRC_ALPHA,
+			SRC_COLOR,
+			DST_ALPHA,
+			DST_COLOR,
+			ONE_MINUS_SRC_ALPHA,
+			ONE_MINUS_SRC_COLOR,
+			ONE_MINUS_DST_ALPHA,
+			ONE_MINUS_DST_COLOR
+		};
+		//渲染设置
+		class SRenderConfig{
+			bool stencil_test;
+			bool stencil_buffer;
+			enumCompare stencil_compare;
+			//////////////////////////////////////////////////////////////////////////
+			bool alpha_test;
+			bool alpha_compare;
+			//////////////////////////////////////////////////////////////////////////
+			bool depth_test;
+			bool depth_buffer;
+			//////////////////////////////////////////////////////////////////////////
+			bool blend;
+			enumBlendFunc blend_func_src;
+			enumBlendFunc blend_func_dst;
+		};
 #pragma region BUFFERS
 		enum EnumIndexType{
 			EIT_UBYTE=1,
@@ -110,12 +172,9 @@ namespace xc{
 		class IContext3D{
 		public:
 			//!获取纹理工厂
-			shared_ptr<ITextureFactory> getTextureFactory()=0;
+			virtual shared_ptr<ITextureFactory> getTextureFactory()=0;
 			//!获取缓冲工厂
-			shared_ptr<IDrawBufferFactory> getBufferFactory()=0;
-		};
-		class IDrawer3D{
-
+			virtual shared_ptr<IDrawBufferFactory> getBufferFactory()=0;
 		};
 	}
 }

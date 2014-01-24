@@ -169,6 +169,34 @@ namespace xc{
 
 		};
 #pragma endregion TEXTURE
+#pragma region LIGHT
+		enum enumLightType{
+			ELT_POINT=0,
+			ELT_SPLOT,
+			ELT_DIRECTION
+		}
+		struct SLight{
+			vector3df pos;
+			vector3df dir;
+			//! 衰减系数
+			float decayFactor;
+			//! 漫反射光
+			colorf ambiColor;
+			//! 散射光
+			colorf specColor;
+			//! 环境光
+			colorf envColor;
+		};
+		struct SMaterial{
+
+			//! 透明度
+			float alpha;
+			//! 漫反射光
+			colorf ambiColor;
+			//! 散射光
+			colorf specColor;
+		};
+#pragma endregion LIGHT
 		class IContext3D{
 		public:
 			//!获取纹理工厂

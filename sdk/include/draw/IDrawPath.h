@@ -21,16 +21,33 @@ namespace xc
 		};
 		class ITexturedPath:public IDrawPath{
 		public:
-
+			
 		};
 		class ITexturedLightedPath:public ITexturedPath{
 		public:
+			//! 启用灯光
+			virtual void activateLight(SLight light,u32 idx)=0;
+		};
+		class IMaterialPath{
+		public:
+			//! 设置材质
+			virtual void activateMaterial(SMaterial mat)=0;
 
+		};
+		class IMaterialLightedPath:public IMaterialPath{
+		public:
+			//! 启用灯光
+			virtual void activateLight(SLight light,u32 idx)=0;
 		};
 		class IBoneAnimatedPath:public ITexturedPath{
-
+		public:
+			//! 上传骨骼变换矩阵
+			virtual void uploadBoneMatrix(void* data,u32 size)=0;
 		};
 		class IBoneAnimatedLightedPath:public ITexturedLightedPath{
+		public:
+			//! 上传骨骼变换矩阵
+			virtual void uploadBoneMatrix(void* data,u32 size)=0;
 
 		};
 		class IPathContext{

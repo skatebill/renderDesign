@@ -13,26 +13,9 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
-    <Filter Include="draw">
-      <UniqueIdentifier>{9762dda3-1948-4a5d-af92-8d3051b7ce7a}</UniqueIdentifier>
-    </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\sdk\include\draw\IDraw3DBase.h">
-      <Filter>draw</Filter>
-    </ClInclude>
-    <ClInclude Include="..\sdk\include\draw\IDrawBase.h">
-      <Filter>draw</Filter>
-    </ClInclude>
-    <ClInclude Include="..\sdk\include\draw\IDrawPath.h">
-      <Filter>draw</Filter>
-    </ClInclude>
-    <ClInclude Include="..\sdk\include\draw\IDrawer3D.h">
-      <Filter>draw</Filter>
-    </ClInclude>
-  </ItemGroup>
-  <ItemGroup>
-    <ClCompile Include="main.cpp">
+    <ClCompile Include="..\demo1\winmain.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>

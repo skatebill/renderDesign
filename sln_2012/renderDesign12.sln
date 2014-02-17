@@ -3,8 +3,6 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2012
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "renderDesign12", "renderDesign12\renderDesign12.vcxproj", "{F008EAFE-FB4E-4BA1-8D0C-4F38F08BBEB0}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "demo1", "demo1\demo1.vcxproj", "{C3202D54-AB49-4463-A24B-A65665E2D606}"
-EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Demovs2012", "Demovs2012\Demovs2012.vcxproj", "{AD84ECF9-DF2F-405F-93B3-E5F136E6CBE6}"
 EndProject
 Global
@@ -17,10 +15,6 @@ Global
 		{F008EAFE-FB4E-4BA1-8D0C-4F38F08BBEB0}.Debug|Win32.Build.0 = Debug|Win32
 		{F008EAFE-FB4E-4BA1-8D0C-4F38F08BBEB0}.Release|Win32.ActiveCfg = Release|Win32
 		{F008EAFE-FB4E-4BA1-8D0C-4F38F08BBEB0}.Release|Win32.Build.0 = Release|Win32
-		{C3202D54-AB49-4463-A24B-A65665E2D606}.Debug|Win32.ActiveCfg = Debug|Win32
-		{C3202D54-AB49-4463-A24B-A65665E2D606}.Debug|Win32.Build.0 = Debug|Win32
-		{C3202D54-AB49-4463-A24B-A65665E2D606}.Release|Win32.ActiveCfg = Release|Win32
-		{C3202D54-AB49-4463-A24B-A65665E2D606}.Release|Win32.Build.0 = Release|Win32
 		{AD84ECF9-DF2F-405F-93B3-E5F136E6CBE6}.Debug|Win32.ActiveCfg = Debug|Win32
 		{AD84ECF9-DF2F-405F-93B3-E5F136E6CBE6}.Debug|Win32.Build.0 = Debug|Win32
 		{AD84ECF9-DF2F-405F-93B3-E5F136E6CBE6}.Release|Win32.ActiveCfg = Release|Win32

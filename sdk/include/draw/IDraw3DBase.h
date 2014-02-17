@@ -174,7 +174,7 @@ namespace xc{
 			ELT_POINT=0,
 			ELT_SPLOT,
 			ELT_DIRECTION
-		}
+		};
 		struct SLight{
 			vector3df pos;
 			vector3df dir;

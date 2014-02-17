@@ -18,22 +18,22 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\sdk\include\draw\IDraw3DBase.h">
-      <Filter>draw</Filter>
-    </ClInclude>
-    <ClInclude Include="..\sdk\include\draw\IDrawBase.h">
-      <Filter>draw</Filter>
-    </ClInclude>
-    <ClInclude Include="..\sdk\include\draw\IDrawPath.h">
-      <Filter>draw</Filter>
-    </ClInclude>
-    <ClInclude Include="..\sdk\include\draw\IDrawer3D.h">
-      <Filter>draw</Filter>
-    </ClInclude>
-  </ItemGroup>
-  <ItemGroup>
     <ClCompile Include="main.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\sdk\include\draw\IDraw3DBase.h">
+      <Filter>draw</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\include\draw\IDrawBase.h">
+      <Filter>draw</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\include\draw\IDrawer3D.h">
+      <Filter>draw</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\include\draw\IDrawPath.h">
+      <Filter>draw</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

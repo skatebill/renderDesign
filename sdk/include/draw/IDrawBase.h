@@ -3,12 +3,6 @@
 #include <draw/IDraw3DBase.h>
 namespace xc{
 	namespace draw{
-		enum EnumDrawFunctions{
-			EDF_2d_base=0,
-			EDF_3d_base,
-			EDF_3d_more_pipeline,
-			EDF_3d_feedbackBuffer
-		};
 		class IDrawer2D{
 
 		};

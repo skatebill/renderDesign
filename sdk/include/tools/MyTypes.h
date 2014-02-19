@@ -42,8 +42,18 @@ namespace xc{
 	typedef double f64;
 
 	using std::shared_ptr;
+	template<typename T>
+	shared_ptr<T> createPtr(){
+		return shared_ptr<T>(new T);
+	}
 	using irr::core::degToRad;
 	using irr::core::radToDeg;
 
 
+	enum EnumDrawFunctions{
+		EDF_2d_base=0,
+		EDF_3d_base,
+		EDF_3d_more_pipeline,
+		EDF_3d_feedbackBuffer
+	};
 }

@@ -27,8 +27,8 @@ namespace xc{
 			// 混合设置
 			virtual void blend_enable()=0;
 			virtual void blend_disable()=0;
-			virtual void blend_src_factor(enumBlendFunc bFactor)=0;
-			virtual void blend_dst_factor(enumBlendFunc bFactor)=0;
+			virtual void blend_src_factor(Blend::enumBlendFunc bFactor)=0;
+			virtual void blend_dst_factor(Blend::enumBlendFunc bFactor)=0;
 		private:
 			IDrawFeatureConfig(const IDrawFeatureConfig& other){
 
@@ -36,6 +36,8 @@ namespace xc{
 		};
 		class IDrawer3D{
 		public:
+			//! 查询功能是否被支持
+			virtual bool isFunctionSupported(EnumDrawFunctions request)=0;
 			virtual void pushRTT(shared_ptr<ITextureTarget> rtt)=0;
 			virtual void popRTT()=0;
 			virtual void setViewPort(recti viewport)=0;

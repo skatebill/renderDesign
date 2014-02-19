@@ -24,30 +24,34 @@ namespace xc{
 			GEQUAL,
 			NOTEQUAL
 		};
-		//! 模板操作
-		enum enumStencilOperation{
-			KEEP=0,
-			ZERO,
-			REPLACE,
-			INCR,
-			DECR,
-			INVERT,
-			INCR_WRAP,
-			DECR_WRAP
-		};
-		//! 混合方式
-		enum enumBlendFunc{
-			ZERO,
-			ONE,
-			SRC_ALPHA,
-			SRC_COLOR,
-			DST_ALPHA,
-			DST_COLOR,
-			ONE_MINUS_SRC_ALPHA,
-			ONE_MINUS_SRC_COLOR,
-			ONE_MINUS_DST_ALPHA,
-			ONE_MINUS_DST_COLOR
-		};
+		namespace Stencil{
+			//! 模板操作
+			enum enumStencilOperation{
+				KEEP=0,
+				ZERO,
+				REPLACE,
+				INCR,
+				DECR,
+				INVERT,
+				INCR_WRAP,
+				DECR_WRAP
+			};
+		}
+		namespace Blend{
+			//! 混合方式
+			enum enumBlendFunc{
+				ZERO,
+				ONE,
+				SRC_ALPHA,
+				SRC_COLOR,
+				DST_ALPHA,
+				DST_COLOR,
+				ONE_MINUS_SRC_ALPHA,
+				ONE_MINUS_SRC_COLOR,
+				ONE_MINUS_DST_ALPHA,
+				ONE_MINUS_DST_COLOR
+			};
+		}
 		//渲染设置
 		class SRenderConfig{
 			bool stencil_test;
@@ -61,8 +65,8 @@ namespace xc{
 			bool depth_buffer;
 			//////////////////////////////////////////////////////////////////////////
 			bool blend;
-			enumBlendFunc blend_func_src;
-			enumBlendFunc blend_func_dst;
+			Blend::enumBlendFunc blend_func_src;
+			Blend::enumBlendFunc blend_func_dst;
 		};
 #pragma region BUFFERS
 		enum EnumIndexType{
@@ -79,6 +83,14 @@ namespace xc{
 			EDT_SHORT,
 			EDT_UBYTE,
 			EDT_BYTE
+		};
+		enum EnumPrimaryType{
+			EPT_Triangles,
+			EPT_Dots,
+			EPT_Lines,
+			EPT_Triangle_Fan,
+			EPT_Triangle_Strip,
+			EPT_Line_Strip
 		};
 		class IDrawBuffer{
 		public:
@@ -119,6 +131,8 @@ namespace xc{
 			virtual unsigned int getIndexNums()=0;
 			//! 获取数据类型
 			virtual EnumIndexType getIndexType()=0;
+			//! 获取默认图元类型
+			virtual EnumPrimaryType getPrimaryType()=0;
 		};
 
 		class IDrawVertexBufferOBject{
@@ -131,6 +145,8 @@ namespace xc{
 			virtual unsigned int getIndexNums()=0;
 			//! 获取数据类型
 			virtual EnumIndexType getIndexType()=0;
+			//! 获取默认图元类型
+			virtual EnumPrimaryType getPrimaryType()=0;
 		};
 		class IDrawBufferFactory{
 		public:
@@ -153,6 +169,10 @@ namespace xc{
 		public:
 			//! 获取纹理大小
 			virtual vector2di getTextureSize()=0;
+			//! 使用纹理
+			virtual void use(int slot)=0;
+			//! 纹理使用完毕
+			virtual void unUse()=0;
 		};
 		class ITextureTarget{
 		public:
@@ -163,9 +183,9 @@ namespace xc{
 		class ITextureFactory{
 		public:
 			//! 创建纹理
-			shared_ptr<ITexture> createTextureFromImage(shared_ptr<fileservice::IImage>)=0;
+			virtual shared_ptr<ITexture> createTextureFromImage(shared_ptr<fileservice::IImage>)=0;
 			//! 创建rtt
-			shared_ptr<ITextureTarget> createTextureTarget(int width,int height,bool depth=true,bool stencil=true)=0;
+			virtual shared_ptr<ITextureTarget> createTextureTarget(int width,int height,bool depth=true,bool stencil=true)=0;
 
 		};
 #pragma endregion TEXTURE

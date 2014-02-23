@@ -1,6 +1,5 @@
 #include "stdafx.h"
 #include "ESBuffers.h"
-#pragma comment(lib,"libGLESv2.lib")
 namespace xc{
 	namespace draw{
 
@@ -92,7 +91,7 @@ namespace xc{
 		}
 		//////////////////////////////////////////////////////////////////////////
 		ESIndexBuffer::ESIndexBuffer():
-			m_IBO(0),m_IndexNum(0),m_EPT(EPT_Triangles),m_EIT(EIT_USHORT)
+			m_IBO(0),m_IndexNum(0),m_EPT(EPT_TRIANGLES),m_EIT(EIT_USHORT)
 		{
 
 		}

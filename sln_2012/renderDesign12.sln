@@ -9,6 +9,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "OGLES_VERSION", "..\sdk\OGL
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "FileService", "..\sdk\FileService\FileService.vcxproj", "{0F2F2088-32EA-48E8-A78D-2B137B7D4AD2}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "DemoPowervr", "..\demo\DemoPowervr\DemoPowervr.vcxproj", "{43D62D33-EE11-43D5-83D2-33D13CAFBB23}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Win32 = Debug|Win32
@@ -31,6 +33,10 @@ Global
 		{0F2F2088-32EA-48E8-A78D-2B137B7D4AD2}.Debug|Win32.Build.0 = Debug|Win32
 		{0F2F2088-32EA-48E8-A78D-2B137B7D4AD2}.Release|Win32.ActiveCfg = Release|Win32
 		{0F2F2088-32EA-48E8-A78D-2B137B7D4AD2}.Release|Win32.Build.0 = Release|Win32
+		{43D62D33-EE11-43D5-83D2-33D13CAFBB23}.Debug|Win32.ActiveCfg = Debug|Win32
+		{43D62D33-EE11-43D5-83D2-33D13CAFBB23}.Debug|Win32.Build.0 = Debug|Win32
+		{43D62D33-EE11-43D5-83D2-33D13CAFBB23}.Release|Win32.ActiveCfg = Release|Win32
+		{43D62D33-EE11-43D5-83D2-33D13CAFBB23}.Release|Win32.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

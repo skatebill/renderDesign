@@ -16,6 +16,9 @@
     <Filter Include="context">
       <UniqueIdentifier>{7a5069ec-bcde-402a-8680-d025fff233cb}</UniqueIdentifier>
     </Filter>
+    <Filter Include="drawer">
+      <UniqueIdentifier>{46e02d17-7898-41d4-9be3-f612d28e8cec}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <Text Include="ReadMe.txt" />
@@ -39,6 +42,9 @@
     <ClInclude Include="src\ESTexture.h">
       <Filter>context</Filter>
     </ClInclude>
+    <ClInclude Include="src\ESDrawer.h">
+      <Filter>drawer</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
@@ -58,6 +64,9 @@
     </ClCompile>
     <ClCompile Include="src\ESTexture.cpp">
       <Filter>context</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ESDrawer.cpp">
+      <Filter>drawer</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

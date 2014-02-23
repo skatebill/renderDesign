@@ -4,13 +4,14 @@
 namespace xc{
 	namespace draw{
 		//! 图元类型枚举
-		enum EnumPrimityType
+		enum EnumPrimaryType
 		{
 			EPT_DOTS=0,
 			EPT_LINES,
 			EPT_LINE_STRIP,
 			EPT_TRIANGLES,
-			EPT_TRIANGLE_STRIP
+			EPT_TRIANGLE_STRIP,
+			EPT_TRIANGLE_FAN
 		};
 
 		//! 比较模式
@@ -83,14 +84,6 @@ namespace xc{
 			EDT_SHORT,
 			EDT_UBYTE,
 			EDT_BYTE
-		};
-		enum EnumPrimaryType{
-			EPT_Triangles,
-			EPT_Dots,
-			EPT_Lines,
-			EPT_Triangle_Fan,
-			EPT_Triangle_Strip,
-			EPT_Line_Strip
 		};
 		class IDrawBuffer{
 		public:

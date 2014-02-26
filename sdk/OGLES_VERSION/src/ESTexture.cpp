@@ -1,4 +1,3 @@
-#include "stdafx.h"
 #include "ESTexture.h"
 namespace xc{
 	namespace draw{

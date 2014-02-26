@@ -40,7 +40,8 @@ namespace xc{
 		class ESDrawer:public IDrawer3D{
 		public:
 			ESDrawFeatureConfig m_esdfc;
-
+			shared_ptr<IPathContext> m_PathConext;
+			ESDrawer();
 			//! 检查是否支持某种特性
 			virtual bool isFunctionSupported(EnumDrawFunctions request);
 			virtual void pushRTT(shared_ptr<ITextureTarget> rtt);
@@ -49,10 +50,11 @@ namespace xc{
 			// 获取绘制设置器
 			virtual const IDrawFeatureConfig& getFeatureConfiger();
 			//! 渲染
-			virtual void render(shared_ptr<IDrawPath> path,shared_ptr<IDrawVertexBufferOBject> vbo,EnumPrimaryType pt=EPT_TRIANGLES);
-			virtual void render(shared_ptr<IDrawPath> path,shared_ptr<IDrawBuffer> vbuf,shared_ptr<IDrawIndexBuffer> ibuf,EnumPrimaryType pt=EPT_TRIANGLES);
-			virtual void render(shared_ptr<IDrawPath> path,shared_ptr<IDrawBuffer> vbuf,u32 num,EnumPrimaryType pt=EPT_TRIANGLES);
-
+			virtual void render(shared_ptr<IDrawVertexBufferOBject> vbo,EnumPrimaryType pt=EPT_TRIANGLES);
+			virtual void render(shared_ptr<IDrawBuffer> vbuf,shared_ptr<IDrawIndexBuffer> ibuf,EnumPrimaryType pt=EPT_TRIANGLES);
+			virtual void render(shared_ptr<IDrawBuffer> vbuf,u32 num,EnumPrimaryType pt=EPT_TRIANGLES);
+			//! 获取pathContext
+			virtual shared_ptr<IPathContext> getPathContext();
 		};
 	}
 }

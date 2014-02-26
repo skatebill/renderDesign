@@ -19,6 +19,9 @@
     <Filter Include="drawer">
       <UniqueIdentifier>{46e02d17-7898-41d4-9be3-f612d28e8cec}</UniqueIdentifier>
     </Filter>
+    <Filter Include="path">
+      <UniqueIdentifier>{718841c4-558e-4979-b631-812399b00d67}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <Text Include="ReadMe.txt" />
@@ -45,6 +48,12 @@
     <ClInclude Include="src\ESDrawer.h">
       <Filter>drawer</Filter>
     </ClInclude>
+    <ClInclude Include="src\ESPath.h">
+      <Filter>path</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ColorPath.h">
+      <Filter>path</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
@@ -67,6 +76,9 @@
     </ClCompile>
     <ClCompile Include="src\ESDrawer.cpp">
       <Filter>drawer</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ESPath.cpp">
+      <Filter>path</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

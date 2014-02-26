@@ -45,9 +45,11 @@ namespace xc{
 			// 获取绘制设置器
 			virtual const IDrawFeatureConfig& getFeatureConfiger()=0;
 			//! 渲染
-			virtual void render(shared_ptr<IDrawPath> path,shared_ptr<IDrawVertexBufferOBject> vbo,EnumPrimaryType pt=EPT_TRIANGLES)=0;
-			virtual void render(shared_ptr<IDrawPath> path,shared_ptr<IDrawBuffer> vbuf,shared_ptr<IDrawIndexBuffer> ibuf,EnumPrimaryType pt=EPT_TRIANGLES)=0;
-			virtual void render(shared_ptr<IDrawPath> path,shared_ptr<IDrawBuffer> vbuf,u32 num,EnumPrimaryType pt=EPT_TRIANGLES)=0;
+			virtual void render(shared_ptr<IDrawVertexBufferOBject> vbo,EnumPrimaryType pt=EPT_TRIANGLES)=0;
+			virtual void render(shared_ptr<IDrawBuffer> vbuf,shared_ptr<IDrawIndexBuffer> ibuf,EnumPrimaryType pt=EPT_TRIANGLES)=0;
+			virtual void render(shared_ptr<IDrawBuffer> vbuf,u32 num,EnumPrimaryType pt=EPT_TRIANGLES)=0;
+			//! 获取path
+			virtual shared_ptr<IPathContext> getPathContext()=0;
 		};
 	}
 }

@@ -1,4 +1,3 @@
-#include "stdafx.h"
 #include "ESBuffers.h"
 namespace xc{
 	namespace draw{

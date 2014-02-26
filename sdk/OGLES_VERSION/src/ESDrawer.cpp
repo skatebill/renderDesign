@@ -1,6 +1,6 @@
-#include"stdafx.h"
 #include"ESDrawer.h"
 #include<GLES2/gl2.h>
+#include"ESPath.h"
 namespace xc{
 	namespace draw{
 		GLuint getCompareFunc(enumCompare sCompare){
@@ -36,6 +36,10 @@ namespace xc{
 				break;
 			}
 			return compare;
+		}
+
+		ESDrawer::ESDrawer(){
+			m_PathConext = shared_ptr<IPathContext>(new ESPathContext);
 		}
 		//! 检查是否支持某种特性
 		bool ESDrawer::isFunctionSupported(EnumDrawFunctions request){
@@ -102,33 +106,30 @@ namespace xc{
 			adaptGLTypes(iType,it);
 		}
 		//! 渲染
-		void ESDrawer::render(shared_ptr<IDrawPath> path,shared_ptr<IDrawVertexBufferOBject> vbo,EnumPrimaryType pt){
-			path->activate();
+		void ESDrawer::render(shared_ptr<IDrawVertexBufferOBject> vbo,EnumPrimaryType pt){
 			vbo->use();
 			GLuint pType,iType;
 			EnumIndexType it = vbo->getIndexType();
 			adaptGLTypes(pType,iType,pt,it);
 			glDrawElements(pType,vbo->getIndexNums(),iType,0);
 			vbo->unUse();
-			path->deActivate();
 		}
-		void ESDrawer::render(shared_ptr<IDrawPath> path,shared_ptr<IDrawBuffer> vbuf,shared_ptr<IDrawIndexBuffer> ibuf,EnumPrimaryType pt){
-			path->activate();
+		void ESDrawer::render(shared_ptr<IDrawBuffer> vbuf,shared_ptr<IDrawIndexBuffer> ibuf,EnumPrimaryType pt){
 			GLuint pType,iType;
 			EnumIndexType it = ibuf->getIndexType();
 			adaptGLTypes(pType,iType,pt,it);
 			vbuf->use(0);
 			ibuf->use();
 			glDrawElements(pType,ibuf->getIndexNums(),iType,0);
-			path->deActivate();
 		}
-		void ESDrawer::render(shared_ptr<IDrawPath> path,shared_ptr<IDrawBuffer> vbuf,u32 num,EnumPrimaryType pt){
-			path->activate();
+		void ESDrawer::render(shared_ptr<IDrawBuffer> vbuf,u32 num,EnumPrimaryType pt){
 			GLuint pType;
 			adaptGLTypes(pType,pt);
 			vbuf->use(0);
 			glDrawArrays(pType,0,num);
-			path->deActivate();
+		}
+		shared_ptr<IPathContext> ESDrawer::getPathContext(){
+			return m_PathConext;
 		}
 
 

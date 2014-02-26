@@ -1,4 +1,3 @@
-#include "stdafx.h"
 #include"ESContext.h"
 #include"ESBuffers.h"
 #include"ESTexture.h"

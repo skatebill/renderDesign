@@ -1,30 +1,13 @@
 #pragma once
 #include"appTypes.h"
 #include <tools/MyTypes.h>
-//#include<site/site.h>
 #include<functional>
 
 namespace xc{
 	namespace app{
 		static const int rongcha = 3;
 		class IApplication{
-		private:
-			//shared_ptr<ISite> mSite;
-			void* m_Extra;
 		public:
-			//! 安装站点
-		//	void installSite(shared_ptr<ISite> site){
-		//		mSite=site;
-		//	}
-		//	inline shared_ptr<ISite> getSite(){
-		//		return mSite;
-		//	}
-			inline void* getExtraData(){
-				return m_Extra;
-			}
-			void setExtra(void* ex){
-				m_Extra = ex;
-			}
 			void exitApp();
 			//////////////////////////////////////////////////////////////////////////
 			//	接口

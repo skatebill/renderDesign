@@ -27,7 +27,7 @@
     <UseDebugLibraries>false</UseDebugLibraries>
     <PlatformToolset>v110</PlatformToolset>
     <WholeProgramOptimization>true</WholeProgramOptimization>
-    <CharacterSet>Unicode</CharacterSet>
+    <CharacterSet>MultiByte</CharacterSet>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
   <ImportGroup Label="ExtensionSettings">
@@ -46,6 +46,8 @@
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <LinkIncremental>false</LinkIncremental>
+    <OutDir>$(SolutionDir)..\bin\$(Configuration)\</OutDir>
+    <IntDir>$(SolutionDir)..\temp\$(ProjectName)\</IntDir>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
@@ -54,7 +56,7 @@
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
       <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;BUILD_OGLES2;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>E:\PowerVR\GraphicsSDK\SDK_3.2\Builds\Include;E:\PowerVR\GraphicsSDK\SDK_3.2\Shell\OS\Windows;E:\PowerVR\GraphicsSDK\SDK_3.2\Shell\;E:\PowerVR\GraphicsSDK\SDK_3.2\Shell\API\KEGL;$(SolutionDir)../sdk/include/;$(SolutionDir)..\libs\;$(SolutionDir)../sdk/OGLES_VERSION/</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>E:\PowerVR\GraphicsSDK\SDK_3.2\Builds\Include;E:\PowerVR\GraphicsSDK\SDK_3.2\Shell\OS\Windows;E:\PowerVR\GraphicsSDK\SDK_3.2\Shell\;E:\PowerVR\GraphicsSDK\SDK_3.2\Shell\API\KEGL;$(SolutionDir)../sdk/include/;$(SolutionDir)..\libs\;$(SolutionDir)../sdk/OGLES_VERSION/;$(ProjectDir)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
@@ -71,13 +73,16 @@
       <Optimization>MaxSpeed</Optimization>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
-      <PreprocessorDefinitions>WIN32;NDEBUG;_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_WINDOWS;BUILD_OGLES2;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>E:\PowerVR\GraphicsSDK\SDK_3.2\Builds\Include;E:\PowerVR\GraphicsSDK\SDK_3.2\Shell\OS\Windows;E:\PowerVR\GraphicsSDK\SDK_3.2\Shell\;E:\PowerVR\GraphicsSDK\SDK_3.2\Shell\API\KEGL;$(SolutionDir)../sdk/include/;$(SolutionDir)..\libs\;$(SolutionDir)../sdk/OGLES_VERSION/;$(ProjectDir)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
+      <AdditionalLibraryDirectories>$(SolutionDir)..\libs\GLES2\;$(SolutionDir)..\libs\EGL\;$(SolutionDir)..\bin\$(Configuration)\;</AdditionalLibraryDirectories>
+      <AdditionalDependencies>libGLESv2.lib;libEGL.lib;OGLES_VERSION.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
@@ -85,6 +90,10 @@
     <ClCompile Include="E:\PowerVR\GraphicsSDK\SDK_3.2\Shell\API\KEGL\PVRShellAPI.cpp" />
     <ClCompile Include="E:\PowerVR\GraphicsSDK\SDK_3.2\Shell\OS\Windows\PVRShellOS.cpp" />
     <ClCompile Include="E:\PowerVR\GraphicsSDK\SDK_3.2\Shell\PVRShell.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Rasterize.h" />
+    <ClInclude Include="waterParticle.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

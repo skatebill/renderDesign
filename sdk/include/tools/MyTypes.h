@@ -34,6 +34,7 @@ namespace xc{
 	typedef irr::core::recti rect;
 	typedef irr::core::recti recti;
 	typedef irr::core::rectf rectf;
+	typedef irr::core::rect<double> rectd;
 	typedef unsigned int u32;
 	typedef unsigned int UINT;
 	typedef unsigned char u8;

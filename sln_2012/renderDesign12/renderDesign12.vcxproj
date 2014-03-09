@@ -59,6 +59,8 @@
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalLibraryDirectories>$(SolutionDir)..\bin\$(Configuration)\;$(SolutionDir)..\libs\assimp\</AdditionalLibraryDirectories>
+      <AdditionalDependencies>FileService.lib;assimp.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -79,13 +81,21 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="..\..\sdk\include\Animate\BoneAnimate.cpp" />
+    <ClCompile Include="..\..\sdk\include\phraser\CAssimpPhraser.cpp" />
     <ClCompile Include="main.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="..\..\sdk\include\Animate\BoneAnimate.h" />
+    <ClInclude Include="..\..\sdk\include\Animate\Interp.h" />
+    <ClInclude Include="..\..\sdk\include\application\appTypes.h" />
+    <ClInclude Include="..\..\sdk\include\application\IApplication.h" />
     <ClInclude Include="..\..\sdk\include\draw\IDraw3DBase.h" />
     <ClInclude Include="..\..\sdk\include\draw\IDrawBase.h" />
     <ClInclude Include="..\..\sdk\include\draw\IDrawer3D.h" />
     <ClInclude Include="..\..\sdk\include\draw\IDrawPath.h" />
+    <ClInclude Include="..\..\sdk\include\phraser\CAssimpPhraser.h" />
+    <ClInclude Include="..\..\sdk\include\phraser\IPhraseSerivce.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

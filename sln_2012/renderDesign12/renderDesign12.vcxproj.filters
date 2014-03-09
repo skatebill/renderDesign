@@ -16,10 +16,22 @@
     <Filter Include="draw">
       <UniqueIdentifier>{9762dda3-1948-4a5d-af92-8d3051b7ce7a}</UniqueIdentifier>
     </Filter>
+    <Filter Include="app">
+      <UniqueIdentifier>{d60d2433-1486-4b5c-a7ca-81c96621790c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="animate">
+      <UniqueIdentifier>{d8f82b82-1fc2-4fc4-9ff3-dd999df285da}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
       <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\sdk\include\Animate\BoneAnimate.cpp">
+      <Filter>animate</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\sdk\include\phraser\CAssimpPhraser.cpp">
+      <Filter>animate</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -34,6 +46,24 @@
     </ClInclude>
     <ClInclude Include="..\..\sdk\include\draw\IDrawPath.h">
       <Filter>draw</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\include\Animate\Interp.h">
+      <Filter>animate</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\include\Animate\BoneAnimate.h">
+      <Filter>animate</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\include\phraser\CAssimpPhraser.h">
+      <Filter>animate</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\include\phraser\IPhraseSerivce.h">
+      <Filter>animate</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\include\application\appTypes.h">
+      <Filter>app</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\include\application\IApplication.h">
+      <Filter>app</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

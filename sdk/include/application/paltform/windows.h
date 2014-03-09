@@ -146,7 +146,6 @@ void create( HINSTANCE hInstance ,int w,int h)
 		NULL );
 	if( !temp::hwnd )
 		return;
-	temp::appInti->setExtra(&temp::hwnd);
 	//xc::ISiteEdieable* s=new xc::ISiteEdieable;
 	//temp::appInti->installSite(xc::shared_ptr<xc::ISite>(s));
 	//auto df = new xc::drawBasement::COpenglFactory;
